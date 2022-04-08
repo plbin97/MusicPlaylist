@@ -1,0 +1,27 @@
+@{
+  ViewData["Title"] = "Playlist";
+  Playlist playlist = Model;
+  List<Song> songs = playlist.GetPlayList();
+}
+
+<div class="text-center">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Song</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Year</th>
+        </tr>
+      </thead>
+      <tbody>
+      @foreach (Song song in songs)
+      {
+        <tr>
+          <td>@song.Name</td>
+          <td>@song.Artist</td>
+          <td>@song.Year.Year</td>
+        </tr>
+      }
+      </tbody>
+    </table>
+</div>

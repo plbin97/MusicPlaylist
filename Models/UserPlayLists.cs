@@ -37,10 +37,10 @@ public class UserPlayLists
         return uuid;
     }
 
-    public Playlist GetPlayListByUserID(String userID)
+    public Playlist GetPlayListByUserToken(String userToken)
     {
         Playlist pl;
-        if (! playlists.TryGetValue(userID, out pl))
+        if (! playlists.TryGetValue(userToken, out pl))
         {
             return null;
         }

@@ -20,6 +20,22 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult PlayList()
+    {
+        String token = Request.Cookies["token"];
+        if (token == null)
+        {
+            return RedirectToAction("Index");
+        }
+        UserPlayLists userPlayLists = UserPlayLists.Instance;
+        Playlist playlist = userPlayLists.GetPlayListByUserToken(token);
+        if (playlist == null)
+        {
+            return RedirectToAction("Index");
+        }
+        return View(playlist);
+    }
+
     public IActionResult Privacy()
     {
         return View();

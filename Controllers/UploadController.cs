@@ -5,13 +5,6 @@ namespace MusicPlaylist.Controllers;
 
 public class UploadController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
-    
-    
-    public UploadController(ILogger<HomeController> logger)
-    {
-        _logger = logger;
-    }
     public async Task<String> GetBody()
     {
         String body = "";

@@ -25,9 +25,9 @@ public class UserPlayListsTest
     public void GetPlayList()
     {
         UserPlayLists upl = UserPlayLists.Instance;
-        Playlist pl = upl.GetPlayListByUserID(testUserID);
+        Playlist pl = upl.GetPlayListByUserToken(testUserID);
         Assert.NotNull(pl);
-        Playlist nullPl = upl.GetPlayListByUserID(testUserID + '1');
+        Playlist nullPl = upl.GetPlayListByUserToken(testUserID + '1');
         Assert.Null(nullPl);
     }
 }
